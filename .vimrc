@@ -59,9 +59,3 @@ set rtp+=/usr/local/opt/fzf
 " Whitespace on Save
 autocmd BufWritePre * %s/\s\+$//e
 
-" set clipboard=unnamed
-
-" powerline setup (supposedly)
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup

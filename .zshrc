@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/bin:$HOME/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$USER/.oh-my-zsh"
@@ -193,5 +193,5 @@ function start_on_ticket() {
 alias start-ticket="start_on_ticket"
 alias reload-zsh="source ~/.zshrc"
 
-# Set up PyEnv
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
