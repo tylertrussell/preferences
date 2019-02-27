@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/tylertrussell/.oh-my-zsh"
+export ZSH="/Users/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -99,30 +99,32 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/tylertrussell/google-cloud-sdk/path.zsh.inc'
+source "/code/google-cloud-sdk/path.zsh.inc"
 
 # VirtualEnv
-source '/Develop/Humble-Bundle/tools/setup/humble_bashrc'
+# source '/code/Humble-Bundle/tools/setup/humble_bashrc'
 
 # The next line enables shell command completion for gcloud.
-source '/Users/tylertrussell/google-cloud-sdk/completion.zsh.inc'
+source "/code/google-cloud-sdk/completion.zsh.inc"
 export PATH=/usr/local/opt/ruby/bin:$PATH
-export PATH=$PATH:/Develop/Humble-Bundle/tools
+export PATH=$PATH:/code/Humble-Bundle/tools
 export PATH=$PATH:/Applications/PyCharm.app/Contents/MacOS
 
+alias activate="source /code/virtualenvs/$1/bin/activate"
+
 # TBT 7/16/2015: alias "dev" to go to my dev dir
-alias dev="cd /Develop/Humble-Bundle"
+alias dev="cd /code/Humble-Bundle"
 
 alias amend="git commit --amend --no-edit"
 
 # TBT 7/16/2015: alias "devtools" to go to my dev tools dir
-alias devtools="cd /Develop/Humble-Bundle/tools"
+alias devtools="cd /code/Humble-Bundle/tools"
 
 # TBT 7/22/2015: stolen from Brian S
 alias post_a_review='git diff `git merge-base master HEAD` --full-index | post-review --diff-filename=- --open --branch=`git rev-parse --abbrev-ref HEAD`  --bugs-closed=`git rev-parse --abbrev-ref HEAD | cut -d/ -f1` --summary=`git rev-parse --abbrev-ref HEAD`'
 
 # TBT 8/12/2015: humblepy settings
-export HUMBLEPYSTARTUP=/Develop/Misc/HumblePy/startup.py
+export HUMBLEPYSTARTUP=/code/Misc/HumblePy/startup.py
 
 # TBT 2/17/2016: gist_me
 alias gist_me="git diff origin/master... | gist -t diff -c -o -p"
@@ -190,3 +192,6 @@ function start_on_ticket() {
 
 alias start-ticket="start_on_ticket"
 alias reload-zsh="source ~/.zshrc"
+
+# Set up PyEnv
+eval "$(pyenv init -)"

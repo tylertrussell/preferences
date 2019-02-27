@@ -292,3 +292,7 @@ tmux_conf_copy_to_os_clipboard=false
 
 # move status line to top
 #set -g status-position top
+
+
+# Set up powerline
+source "~/.pyenv/versions/2.7.15/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"

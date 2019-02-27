@@ -1,6 +1,8 @@
-./configure \
---enable-pythoninterp=yes \
+sudo ./configure \
+--enable-pythoninterp \
 --with-features=huge \
 --with-x \
---disable-darwin
-sudo make && make install
+--disable-darwin \
+--enable-fail-if-missing && \
+sudo make && \
+sudo make install
