@@ -12,8 +12,13 @@ Plugin 'VundleVim/Vundle.vim'
 
 " MY PLUGINS
 Plugin 'junegunn/fzf.vim'
+" Plugin 'jremmen/vim-ripgrep'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
+Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'kien/tabman.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 """""""""""
 
 " All of your Plugins must be added before the following line
@@ -33,17 +38,22 @@ filetype plugin indent on    " required
 
 " MY SETTINGS
 " Generics
+colorscheme space-vim-dark
 let mapleader = "\\"
 
 syntax on
 filetype on
-set wrap
+set nowrap
 set linebreak
 set hlsearch
 set number
+set colorcolumn=80
 
 " backspace fix for newline
 set bs=indent,eol,start
+
+" M I C --- K E Y
+set mouse=a
 
 " NERDTree
 autocmd vimenter * NERDTree
@@ -51,7 +61,9 @@ autocmd vimenter * wincmd l
 let g:NERDTreeNodeDelimiter = "\u00a0"
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>] :Files<CR>
-nnoremap <leader>[ :Ag<CR>
+nnoremap <leader>[ :Rg<CR>
+nnoremap <C-t> :TMToggle<CR>
+nnoremap <C-g> :GitGutterToggle<CR>
 
 " FZF
 set rtp+=/usr/local/opt/fzf
