@@ -19,6 +19,7 @@ Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'kien/tabman.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Chiel92/vim-autoformat'
 """""""""""
 
 " All of your Plugins must be added before the following line
@@ -48,6 +49,9 @@ set linebreak
 set hlsearch
 set number
 set colorcolumn=80
+set expandtab
+set shiftwidth=2
+set tabstop=2
 
 " backspace fix for newline
 set bs=indent,eol,start
@@ -59,6 +63,7 @@ set mouse=a
 autocmd vimenter * NERDTree
 autocmd vimenter * wincmd l
 let g:NERDTreeNodeDelimiter = "\u00a0"
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>] :Files<CR>
 nnoremap <leader>[ :Rg<CR>
@@ -66,7 +71,7 @@ nnoremap <C-t> :TMToggle<CR>
 nnoremap <C-g> :GitGutterToggle<CR>
 
 " FZF
-set rtp+=/usr/local/opt/fzf
+set rtp+=/home/linuxbrew/.linuxbrew/bin/fzf
 
 " Whitespace on Save
 autocmd BufWritePre * %s/\s\+$//e
