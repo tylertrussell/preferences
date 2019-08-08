@@ -56,7 +56,6 @@ set bs=indent,eol,start
 set mouse=a
 
 " NERDTree
-autocmd vimenter * NERDTree
 autocmd vimenter * wincmd l
 let g:NERDTreeNodeDelimiter = "\u00a0"
 nnoremap <C-n> :NERDTreeToggle<CR>
